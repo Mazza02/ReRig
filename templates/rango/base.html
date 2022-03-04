@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>
+            {% block title_block %}
+                Welcome to ReRig!
+            {% endblock %}
+        </title>
+
+        <div>
+            {% block navbar_block %}
+                <ul id="navbar">
+                    <li><a href="{% url 'rango:Index' %}">Home</a></li>
+                    <li><a href="{% url 'rango:About' %}">About</a></li>
+                    
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'rango:Account' %}">Account</a></li>
+                        <li><a href="{% url 'rango:Logout' %}">Log out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'rango:Login' %}">Login</a></li>
+                        <li><a href="{% url 'rango:Register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            {% endblock %}
+        </div>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %}
+            {% endblock %}
+        </div>
+    </body>
+
+
+
+
+</html>
