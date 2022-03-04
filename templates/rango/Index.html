@@ -2,18 +2,15 @@
 {% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html>
-    <head>
-        <title>ReRig: Home</title>
-    </head>
-    
-    <body>
-        <h1>ReRig</h1>
-        <div>
-            It's very basic <br />
-        </div>
-        <div>
-            <a href="/rerig/about/">About Us</a><br />
-        </div>
-    </body>
-</html>
+<!-- Since this extends the base.html file we don't want to touch the title or navbar here as the base version will suffice for the index page -->
+
+{% block body_block %}
+
+    <!-- photo carousel to go here -->
+
+    <div id="More-Posts-container">
+        <!-- The viewMoreRigs function should redirect the search page-->
+        <button id="more-rigs-button" onclick="viewMoreRigs()">More Rigs!</button>
+    </div>
+
+{% endblock %}
